@@ -3,7 +3,7 @@ package piscine
 // "abcdefghijklmnopqrstuwxyz"
 
 func FifthAndSkip(str string) string {
-	runes := []rune(str)
+	runes := []rune(str) // конвертация
 
 	if len(runes) == 0 {
 		return "\n"
@@ -13,20 +13,20 @@ func FifthAndSkip(str string) string {
 		return "Invalid Input\n"
 	}
 
-	count := 0
-	result := ""
+	count := 0   // счетчик символов
+	result := "" // результат
 
 	for _, r := range str {
-		if r == ' ' {
+		if r == ' ' { // пропускаю пробелы
 			continue
 		}
 
-		count++
+		count++ // считаю символы
 		if count < 6 {
 			result = result + string(r)
 		} else {
-			result = result + " "
-			count = 0
+			result = result + " " // замена каждого 6-го символа на пробел
+			count = 0             // обнуление счетчика
 		}
 	}
 
